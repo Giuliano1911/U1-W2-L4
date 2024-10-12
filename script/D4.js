@@ -111,8 +111,7 @@ const upperFirst = function (str) {
   for (let i = 0; i < parole.length; i++) {
     parole[i] = parole[i][0].toUpperCase() + parole[i].substr(1)
   }
-  parole.join(' ')
-  return parole.toString()
+  return parole.join(' ')
 }
 let upperCased = upperFirst('ciao sono giuliano')
 console.log('Every word to UpperCase: ', upperCased)
@@ -125,7 +124,7 @@ console.log('Every word to UpperCase: ', upperCased)
 
 const cutString = function (str) {
   str = str.replace(str.charAt(0), '')
-  str = str.replace(str.length - 1, '')
+  str = str.replace(str.charAt(str.length - 1), '')
   return str
 }
 

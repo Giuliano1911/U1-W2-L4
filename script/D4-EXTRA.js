@@ -210,13 +210,23 @@ console.log('è spam?: ', antiSpam('ciao ciao ciao ciao'))
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
-//con la libreria moments.js
+const daysPassed = function (date) {
+  let dateInPast = new Date(date)
+  let today = new Date()
+  let differenceInTime = today.getTime() - dateInPast.getTime()
+  let differenceInDays = Math.round(differenceInTime / (1000 * 3600 * 24))
+  console.log(
+    'Total number of days between dates:\n' +
+      dateInPast.toDateString() +
+      ' and ' +
+      today.toDateString() +
+      ' is: ' +
+      differenceInDays +
+      ' days'
+  )
+}
 
-// const daysPassed = function (date) {
-//   return moment().diff(date, 'days')
-// }
-
-// console.log(daysPassed('09-09-2024'))
+daysPassed('2024-10-3')
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
@@ -227,4 +237,17 @@ console.log('è spam?: ', antiSpam('ciao ciao ciao ciao'))
  "10","11","12"]
 */
 
-const matrixGenerator = function (x, y) {}
+const matrixGenerator = function (x, y) {
+  const matrix = []
+  let array = []
+  for (let i = 0; i < x; i++) {
+    for (let j = 0; j < y; j++) {
+      array[j] = i.toString() + j.toString()
+    }
+    matrix[i] = array
+    array = []
+  }
+  return matrix
+}
+
+console.log(matrixGenerator(6, 8))
