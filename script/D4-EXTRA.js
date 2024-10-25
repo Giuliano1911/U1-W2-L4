@@ -239,14 +239,14 @@ daysPassed('2024-10-3')
 
 const matrixGenerator = function (x, y) {
   const matrix = []
-  const array = []
   for (let i = 0; i < x; i++) {
+    const array = []
     for (let j = 0; j < y; j++) {
       array[j] = i.toString() + j.toString()
     }
-    matrix[i] = [...array]
+    matrix[i] = array
   }
   return matrix
 }
 
-console.log(matrixGenerator(6, 8))
+console.log(matrixGenerator(10, 3))
